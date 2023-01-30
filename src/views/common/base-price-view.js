@@ -35,7 +35,7 @@ export default class BasePriceView extends View {
   }
 
   getValue() {
-    return (this.querySelector('input')).value;
+    return this.querySelector('input').valueAsNumber;
   }
 }
 

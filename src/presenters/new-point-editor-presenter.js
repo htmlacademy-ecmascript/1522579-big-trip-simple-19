@@ -118,7 +118,7 @@ export default class NewPointEditorPresenter extends Presenter {
       point.destinationId = destination?.id;
       point.startDate = startDate;
       point.endDate = endDate;
-      point.basePrice = Number(this.view.basePriceView.getValue());
+      point.basePrice = this.view.basePriceView.getValue();
       point.offerIds = this.view.offersView.getValues();
 
       await this.save(point);

@@ -44,7 +44,7 @@ export default class ListPresenter extends Presenter {
     const destination = this.destinationsModel.findById(point.destinationId);
     const offerGroup = this.offerGroupsModel.findById(point.type);
 
-    const OfferViewStates = offerGroup.items
+    const offerViewStates = offerGroup.items
       .filter((offer) =>
         point.offerIds.includes(offer.id)
       )
@@ -63,7 +63,7 @@ export default class ListPresenter extends Presenter {
       endTime: formatTime(point.endDate),
       endDate: point.endDate,
       basePrice: formatNumber(point.basePrice),
-      offers: OfferViewStates,
+      offers: offerViewStates,
     };
   }
 

@@ -13,10 +13,10 @@ export default class SortPresenter extends Presenter {
     const options = Object.entries(sortTitleMap).map(([value, title]) => ({title, value}));
 
     this.view.setOptions(options);
+    this.view.setDisability(Object.values(sortDisabilityMap));
     this.updateViewValue();
     this.updateViewVisibility();
     this.view.addEventListener('change', this.handleViewChange.bind(this));
-    this.view.setDisability(Object.values(sortDisabilityMap));
 
     this.pointsModel.addEventListener('add', this.handlePointsModelAdd.bind(this));
     this.pointsModel.addEventListener('update', this.handlePointsModelUpdate.bind(this));
